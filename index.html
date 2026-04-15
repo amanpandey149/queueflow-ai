@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueueFlow AI</title>
+    <meta name="description" content="Manage crowd queues at large events with QueueFlow AI.">
+    <!-- Clean typography via Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">QueueFlow AI</div>
+            <div id="system-status" class="system-status">🟢 Live</div>
+        </div>
+        <div class="user-info">Guest User</div>
+    </header>
+
+    <main class="dashboard">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Smart Crowd Management for Large Events</h1>
+            <p class="hero-subtitle">Helping thousands avoid long queues</p>
+        </section>
+
+        <!-- Impact Stats -->
+        <section class="impact-stats">
+            <div class="card stat-card">
+                <div class="stat-value">👥 45,000</div>
+                <div class="stat-label">Total People Managed</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-value">⏱ 2,300 min</div>
+                <div class="stat-label">Time Saved</div>
+            </div>
+        </section>
+
+        <!-- Smart Recommendation -->
+        <section class="recommendation-section">
+            <div class="recommendation-card" id="recommendation-card">
+                <span class="badge">🚀 Best Choice</span>
+                <h2 id="recommended-gate-text">🚀 Recommended Gate: Gate 2</h2>
+                <div class="recommendation-subtext" id="recommended-subtext">Save up to 10 minutes</div>
+                <div class="recommendation-tagline">Save time and avoid crowd</div>
+            </div>
+        </section>
+
+        <!-- Queue Overview -->
+        <section class="queue-overview">
+            <h3 class="section-title">Queue Overview</h3>
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <button id="simulate-btn" class="pill-btn simulation-btn">⏳ Simulate Crowd Update</button>
+                <div id="last-updated" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Last Updated: Just now</div>
+            </div>
+            <div class="gate-cards" id="gate-cards-container">
+                <!-- Gate 1: High -->
+                <div class="card gate-card" id="gate-1">
+                    <div class="gate-info">
+                        <h4>Gate 1</h4>
+                        <span class="status-indicator status-high"></span>
+                    </div>
+                    <div class="wait-time wait-high">15 min</div>
+                    <div class="wait-label">Wait Time (High)</div>
+                </div>
+                <!-- Gate 2: Low -->
+                <div class="card gate-card optimal" id="gate-2">
+                    <div class="gate-info">
+                        <h4>Gate 2</h4>
+                        <span class="status-indicator status-low"></span>
+                    </div>
+                    <div class="wait-time wait-low">5 min</div>
+                    <div class="wait-label">Wait Time (Low)</div>
+                </div>
+                <!-- Gate 3: Medium -->
+                <div class="card gate-card" id="gate-3">
+                    <div class="gate-info">
+                        <h4>Gate 3</h4>
+                        <span class="status-indicator status-medium"></span>
+                    </div>
+                    <div class="wait-time wait-medium">10 min</div>
+                    <div class="wait-label">Wait Time (Medium)</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bottom-sections">
+            <!-- Alerts Section -->
+            <section class="alerts-section">
+                <h3 class="section-title">Live Alerts</h3>
+                <div class="card alerts-container" id="alerts-container">
+                    <div class="alert-item">
+                        <span class="alert-dot red"></span>
+                        <p>Gate 1 is crowded</p>
+                    </div>
+                    <div class="alert-item">
+                        <span class="alert-dot green"></span>
+                        <p>Gate 2 is almost free</p>
+                    </div>
+                    <div class="alert-item">
+                        <span class="alert-dot yellow"></span>
+                        <p>Gate 3 has moderate traffic</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simple Assistant Box -->
+            <section class="assistant-section">
+                <h3 class="section-title">Smart Assistant</h3>
+                <div class="card assistant-container">
+                    <div class="assistant-chat" id="chat-box">
+                        <div class="message system">Hello! Ask me about the gates.</div>
+                    </div>
+                    <div class="assistant-input-area">
+                        <input type="text" id="assistant-input" placeholder="Type a question...">
+                        <button id="send-btn">Ask</button>
+                    </div>
+                    <div class="predefined-questions">
+                        <button class="pill-btn" onclick="askQuestion('Fastest Gate?')">Fastest Gate?</button>
+                        <button class="pill-btn" onclick="askQuestion('Least Crowd?')">Least Crowd?</button>
+                        <button class="pill-btn" onclick="askQuestion('Wait Times?')">Wait Times?</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>QueueFlow AI • Smart Crowd Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
